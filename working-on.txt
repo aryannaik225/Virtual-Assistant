@@ -1,0 +1,52 @@
+wake up Jarvis
+hello Jarvis
+who are you
+who created you
+what can you do
+how are you
+tell me something funny
+tell me a joke
+thank you
+open chrome
+close chrome
+check my internet speed
+play a game (optional)
+i am tired
+pause the video
+enter full screen
+play the video
+mute the video
+unmute the video
+volume down
+volume up
+close chrome
+play a song
+close chrome
+search (whatever) on google
+search (whatever) on youtube
+search (whatever) on wikipedia
+what is the temperature (returns people also ask as its the first link)
+whats the time
+remember that ...
+what do you remember
+tell me news ==> your choice
+calculate 2+3
+calculate 2i+3i+5i
+take a screenshot
+click my photo
+translate ball to hindi on google
+enter focus mode (locks youtube and all for 30 mins so i wouldnt try)
+go to sleep
+wake up
+finally sleep
+
+
+#commands that are buggy
+play a game==> isnt stopping until both are atleast 3 points
+temperature / weather ==> returns "people also ask" as thats what is at the top when you search for temperature on google
+set an alarm ==> takes input on terminal instead of gui
+remember that ==> the speech doesnt speak everything ... easy to fix
+whatsapp ==> the datetime module has no attribute "now" which is used to send the message after two minutes of confirming
+schedule my day ==> when asked how many tasks ... it takes input of three instead of 3 so cant convert into integer
+ipl score ==> it doesnt work
+translate ==> the api isnt working so ask google to translate but it returns a whole para too about the word along with the translation
