@@ -153,7 +153,9 @@ if __name__ == "__main__":
         query = icecream.recognize_speech().lower()
         if "wake up" in query:
             from GreetMe import greetMe
-            icecream.response_text(greetMe())
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
 
             while True:
                 query = icecream.recognize_speech().lower()
