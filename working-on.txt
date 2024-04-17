@@ -42,7 +42,6 @@ finally sleep
 
 
 #commands that are buggy
-play a game==> isnt stopping until both are atleast 3 points
 temperature / weather ==> returns "people also ask" as thats what is at the top when you search for temperature on google
 set an alarm ==> takes input on terminal instead of gui
 remember that ==> the speech doesnt speak everything ... easy to fix
