@@ -31,3 +31,4 @@ fnmatch
 googletrans
 gtts
 speech_recognition
+youtube_search
