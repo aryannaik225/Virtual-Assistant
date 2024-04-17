@@ -249,7 +249,7 @@ if __name__ == "__main__":
                     query = query.replace("jarvis","")
                     pyautogui.press("super")
                     pyautogui.typewrite(query)
-                    pyautogui.sleep(2)
+                    pyautogui.sleep(3)
                     pyautogui.press("enter")     
 
                 # elif "internet speed" in query:
@@ -282,73 +282,73 @@ if __name__ == "__main__":
                         speak("Sorry, I couldn't perform the speed test at the moment.")
 
                 elif "play a game" in query:
-                    # from game import game_play
-                    # game_play() 
-                    icecream.response_text("Lets Play ROCK PAPkER SCISSORS !!")
-                    speak("Lets Play ROCK PAPER SCISSORS !!")
-                    print("LETS PLAYYYYYYYYYYYYYY")
-                    i = 0
-                    Me_score = 0
-                    Com_score = 0
-                    while(Me_score<3 or Com_score<3):
-                        choose = ("rock","paper","scissors") #Tuple
-                        com_choose = random.choice(choose)
-                        query = icecream.recognize_speech().lower()
-                        if (query == "rock"):
-                            if (com_choose == "rock"):
-                                icecream.response_text("ROCK")
-                                speak("ROCK")
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                            elif (com_choose == "paper"):
-                                icecream.response_text("PAPER")
-                                speak("paper")
-                                Com_score += 1
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                            else:
-                                icecream.response_text("SCISSORS")
-                                speak("Scissors")
-                                Me_score += 1
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    from game import game_play
+                    game_play() 
+                    # icecream.response_text("Lets Play ROCK PAPkER SCISSORS !!")
+                    # speak("Lets Play ROCK PAPER SCISSORS !!")
+                    # print("LETS PLAYYYYYYYYYYYYYY")
+                    # i = 0
+                    # Me_score = 0
+                    # Com_score = 0
+                    # while(Me_score<3 or Com_score<3):
+                    #     choose = ("rock","paper","scissors") #Tuple
+                    #     com_choose = random.choice(choose)
+                    #     query = icecream.recognize_speech().lower()
+                    #     if (query == "rock"):
+                    #         if (com_choose == "rock"):
+                    #             icecream.response_text("ROCK")
+                    #             speak("ROCK")
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         elif (com_choose == "paper"):
+                    #             icecream.response_text("PAPER")
+                    #             speak("paper")
+                    #             Com_score += 1
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         else:
+                    #             icecream.response_text("SCISSORS")
+                    #             speak("Scissors")
+                    #             Me_score += 1
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
 
-                        elif (query == "paper" ):
-                            if (com_choose == "rock"):
-                                icecream.response_text("ROCK")
-                                speak("ROCK")
-                                Me_score += 1
-                                print(f"Score:- ME :- {Me_score+1} : COM :- {Com_score}")
+                    #     elif (query == "paper" ):
+                    #         if (com_choose == "rock"):
+                    #             icecream.response_text("ROCK")
+                    #             speak("ROCK")
+                    #             Me_score += 1
+                    #             print(f"Score:- ME :- {Me_score+1} : COM :- {Com_score}")
 
-                            elif (com_choose == "paper"):
-                                icecream.response_text("PAPER")
-                                speak("paper")
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                            else:
-                                icecream.response_text("SCISSORS")
-                                speak("Scissors")
-                                Com_score += 1
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         elif (com_choose == "paper"):
+                    #             icecream.response_text("PAPER")
+                    #             speak("paper")
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         else:
+                    #             icecream.response_text("SCISSORS")
+                    #             speak("Scissors")
+                    #             Com_score += 1
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
 
-                        elif (query == "scissors" or query == "scissor"):
-                            if (com_choose == "rock"):
-                                icecream.response_text("ROCK")
-                                speak("ROCK")
-                                Com_score += 1
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                            elif (com_choose == "paper"):
-                                icecream.response_text("PAPER")
-                                speak("paper")
-                                Me_score += 1
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                            else:
-                                icecream.response_text("SCISSORS")
-                                speak("Scissors")
-                                print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
-                        response = f"Score:- ME :- {Me_score} : COM :- {Com_score}"
-                        icecream.response_text(response)
-                        i += 1
+                    #     elif (query == "scissors" or query == "scissor"):
+                    #         if (com_choose == "rock"):
+                    #             icecream.response_text("ROCK")
+                    #             speak("ROCK")
+                    #             Com_score += 1
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         elif (com_choose == "paper"):
+                    #             icecream.response_text("PAPER")
+                    #             speak("paper")
+                    #             Me_score += 1
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #         else:
+                    #             icecream.response_text("SCISSORS")
+                    #             speak("Scissors")
+                    #             print(f"Score:- ME :- {Me_score} : COM :- {Com_score}")
+                    #     response = f"Score:- ME :- {Me_score} : COM :- {Com_score}"
+                    #     icecream.response_text(response)
+                    #     i += 1
 
-                    response = f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}"
-                    icecream.response_text(response)
-                    print(f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}")
+                    # response = f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}"
+                    # icecream.response_text(response)
+                    # print(f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}")
 
 
                 elif "tired" in query:
