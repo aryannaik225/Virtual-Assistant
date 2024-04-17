@@ -2,7 +2,7 @@
 
 Jarvis is a Python-based AI assistant that can perform various tasks such as responding to voice commands, fetching the latest news, playing games, setting alarms, providing weather updates, and much more.
 
-For the main functionality of the project, please refer to the [main.py](main.py) file.
+For the main functionality of the project, please refer to the [Jarvis_main.py](Jarvis_main.py) file.
 
 
 ## Features
@@ -33,7 +33,7 @@ pip install -r requirements.txt
 3. Run the application:
 
 ```
-python main.py
+python Jarvis_main.py
 ```
 
 ## Usage
