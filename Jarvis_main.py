@@ -229,10 +229,12 @@ if __name__ == "__main__":
 
                 elif "focus mode" in query:
                     response = "Are you sure that you want to enter focus mode:- YES / NO"
+                    print(response)
                     icecream.response_text(response)
                     a = icecream.recognize_speech().lower()
                     if "yes" in a:
                         response = "Entering the focus mode...."
+                        print(response)
                         icecream.response_text(response)
                         speak("Entering the focus mode....")
                         os.startfile("FocusMode.py")
