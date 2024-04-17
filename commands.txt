@@ -1,0 +1,25 @@
+Features of the AI Assistant:
+
+1. Text-to-speech conversion - `speak(audio)`
+2. Speech recognition - `takeCommand()`
+3. Setting alarms - `alarm(query)`
+4. Opening GUI windows - `open_window()`
+5. Recognizing speech and responding in GUI - `recognize_speech()`
+6. Playing games (Rock, Paper, Scissors) - `play a game` - Starts a game of Rock, Paper, Scissors
+7. Playing videos and controlling playback (pause, play, mute, unmute, full screen) - `pause` - Pauses the video
+8. Adjusting volume - `volume up` - Increases the volume
+9. Opening, launching, and closing applications - `open` - Opens an application
+10. Searching on Google, YouTube, and Wikipedia - `google` - Performs a Google search
+11. Getting temperature and weather information - `temperature` - Retrieves current temperature information
+12. Performing internet speed tests - `internet speed` - Conducts an internet speed test
+13. Remembering user input - `remember that` - Stores information for later retrieval
+14. Displaying latest news - `news` - Shows the latest news headlines
+15. Performing calculations - `calculate` - Computes a mathematical expression
+16. Sending messages on WhatsApp - `whatsapp` - Sends a message using WhatsApp
+17. Shutting down the system - `shutdown the system` - Shuts down the computer
+18. Scheduling tasks for the day - `schedule my day` - Schedules tasks for the day
+19. Showing the user's schedule - `show my schedule` - Displays the user's schedule
+20. Checking IPL cricket scores - `ipl score` - Retrieves current IPL cricket scores
+21. Taking screenshots - `screenshot` - Captures a screenshot
+22. Taking photos using the camera - `click my photo` - Takes a photo using the camera
+23. Translating text - `translate` - Translates text to another language
