@@ -39,8 +39,10 @@ python main.py
 ## Usage
 
 - Upon running the application, the Jarvis GUI will appear on the screen.
-- Click the "Listen" button to activate voice recognition and speak your command.
+- Say "wake up" and Jarvis boots up ready to listen to your commands.
 - Jarvis will process your command and respond accordingly.
+- Once done, say "go to sleep" to temporarily sleep Jarvis.
+- Or say "finally sleep" to exit the application completely.
 
 ## Dependencies
 
