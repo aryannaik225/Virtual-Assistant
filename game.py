@@ -37,7 +37,7 @@ def game_play():
     i = 0
     Me_score = 0
     Com_score = 0
-    while(Me_score<3 or Com_score<3):
+    while(Me_score<3 and Com_score<3):
         choose = ("rock","paper","scissors") #Tuple
         com_choose = random.choice(choose)
         query = icecream.recognize_speech().lower()
