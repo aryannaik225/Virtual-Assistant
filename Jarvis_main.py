@@ -164,35 +164,62 @@ if __name__ == "__main__":
                     icecream.response_text(response)
                     speak("Ok sir, you can call me anytime")
                     break
+                elif "stop" in query:
+                    response = "Ok, I'll stop now"
+                    icecream.response_text(response)
+                    speak(response)
+                    break
 
+
+                elif "who are you" in query:
+                    response = "I am your personal Assistant Jarvis"
+                    icecream.response_text(response)
+                    speak(response)
+                
+                elif "who created you" in query:
+                    response = "I was created by bunch of nerds from D.Y.P.U"
+                    icecream.response_text(response)
+                    speak(response)
+
+                elif "what can you do" in query:
+                    from whatcan import readme
+                    readme()
+                
                 elif "hello" in query:
                     response = "Hello sir"
                     icecream.response_text(response)
                     speak("Hello sir")
+                
                 elif "how are you" in query:
                     response = "I'm absolutely perfect"
                     icecream.response_text(response)
                     speak("I'm absolutely perfect")
+                
                 elif "funny" in query:
                     response = pyjokes.get_joke()
                     icecream.response_text(response)
                     speak(response)
+                
                 elif "joke" in query:
                     response = pyjokes.get_joke()
                     icecream.response_text(response)
                     speak(response)
+                
                 elif "jokes" in query:
                     response = pyjokes.get_joke()
                     icecream.response_text(response)
                     speak(response)
+                
                 elif "thank you" in query:
                     response = "Welcome Sir"
                     icecream.response_text(response)
                     speak("Welcome sir")
+                
                 elif "thank" in query:
                     response = "Welcome sir"
                     icecream.response_text(response)
                     speak("Welcome sir")   
+                
                 elif "thanks" in query:
                     response = "Welcome sir"
                     icecream.response_text(response)
