@@ -250,7 +250,13 @@ if __name__ == "__main__":
                     pyautogui.press("super")
                     pyautogui.typewrite(query)
                     pyautogui.sleep(3)
-                    pyautogui.press("enter")     
+                    pyautogui.press("enter")
+
+                elif "close" in query:
+                    query = query.replace("close", "")
+                    query = query.replace("jarvis", "")
+                    query = query.replace(" ", "")
+                    os.system(f"taskkill /f /im {query}.exe")     
 
                 # elif "internet speed" in query:
                 #     from speedtest import Speedtest
@@ -369,7 +375,13 @@ if __name__ == "__main__":
                         webbrowser.open("https://youtu.be/II2EO3Nw4m0?si=LceJckFBQjWUxwlN")
                         sleep(5)
                         pyautogui.press("f") 
-                     
+
+                elif "song" in query:
+                    response = "Playing songs from YouTube"
+                    icecream.response_text(response)
+                    speak(response)
+                    from song import play
+                    play()
             
                 elif "pause" in query:
                     pyautogui.press("k")
@@ -412,17 +424,17 @@ if __name__ == "__main__":
 
                 elif "open" in query:
                     from Dictapp import openappweb
-                    response = f"Launching {query}, sir"
+                    response = f"Launching {query}"
                     icecream.response_text(response)
                     openappweb(query)
                 elif "launch" in query:
                     from Dictapp import openappweb
-                    response = f"Launching {query}, sir"
+                    response = f"Launching {query}"
                     icecream.response_text(response)
                     openappweb(query)
                 elif "close" in query:
                     from Dictapp import closeappweb
-                    response = "Closing,sir"
+                    response = f"Closing {query}"
                     icecream.response_text(response)
                     closeappweb(query)
                 
@@ -472,7 +484,7 @@ if __name__ == "__main__":
 
                 elif "the time" in query:
                     strTime = datetime.datetime.now().strftime("%H:%M")
-                    response =  f"Sir, the time is {strTime}"
+                    response =  f"The time is {strTime}"
                     icecream.response_text(response)  
                     speak(f"Sir, the time is {strTime}")
 
@@ -495,7 +507,8 @@ if __name__ == "__main__":
                     remember = open("Remember.txt","r")
                     icecream.response_text(remember.read())
                     speak("You told me to " + remember.read())
-                
+                    remember.close()
+
                 elif "news" in query:
                     from NewsRead import latestnews
                     latestnews()
@@ -513,8 +526,13 @@ if __name__ == "__main__":
                     sendMessage()
 
                 elif "shutdown the system" in query:
+                    response = "Are you sure you want to shutdown?"
+                    icecream.response_text(response)
                     speak("Are You sure you want to shutdown")
-                    shutdown = input("Do you wish to shutdown your computer? (yes/no)")
+                    response = "Do you wish to shutdown your computer? (yes/no)"
+                    icecream.response_text(response)
+                    speak("Do you wish to shutdown your computer?")
+                    shutdown = icecream.recognize_speech()
                     if shutdown == "yes":
                         os.system("shutdown /s /t 1")
 
@@ -523,24 +541,34 @@ if __name__ == "__main__":
 
                 elif "schedule my day" in query:
                     tasks = [] #Empty list 
+                    response == "Do you want to clear old tasks?"
+                    icecream.response_text(response)
                     speak("Do you want to clear old tasks (Plz speak YES or NO)")
                     query = takeCommand().lower()
                     if "yes" in query:
                         file = open("tasks.txt","w")
                         file.write(f"")
                         file.close()
-                        no_tasks = int(input("Enter the no. of tasks :- "))
+                        icecream.response_text("How manys tasks do you wish to enter?")
+                        speak("How manys tasks do you wish to enter?")
+                        no_tasks = int(icecream.recognize_speech())
                         i = 0
                         for i in range(no_tasks):
-                            tasks.append(input("Enter the task :- "))
+                            icecream.response_text(f"What is the task {i}?")
+                            speak(f"What is the task {i}")
+                            tasks.append(icecream.recognize_speech())
                             file = open("tasks.txt","a")
                             file.write(f"{i}. {tasks[i]}\n")
                             file.close()
                     elif "no" in query:
+                        icecream.response_text("How manys tasks do you wish to enter?")
+                        speak("How manys tasks do you wish to enter?")
+                        no_tasks = int(icecream.recognize_speech())
                         i = 0
-                        no_tasks = int(input("Enter the no. of tasks :- "))
                         for i in range(no_tasks):
-                            tasks.append(input("Enter the task :- "))
+                            icecream.response_text(f"What is the task {i}?")
+                            speak(f"What is the task {i}")
+                            tasks.append(icecream.recognize_speech())
                             file = open("tasks.txt","a")
                             file.write(f"{i}. {tasks[i]}\n")
                             file.close()
@@ -582,10 +610,10 @@ if __name__ == "__main__":
                             timeout=15
                         )
                     except IndexError:
-                        print("Error: Unable to retrieve IPL scores. Please try again later.")
+                        print("Error: Unable to retrieve IPL scores at the moment. Please try again later.")
                         notification.notify(
                             title="IPL SCORE",
-                            message="Unable to retrieve scores. Please try again later.",
+                            message="Unable to retrieve scores at the moment. Please try again later.",
                             timeout=15
                         )
 
@@ -600,6 +628,8 @@ if __name__ == "__main__":
                     pyautogui.typewrite("camera")
                     pyautogui.press("enter")
                     pyautogui.sleep(2)
+                    response = "SMILE"
+                    icecream.response_text(response)
                     speak("SMILE")
                     pyautogui.press("enter")
 
@@ -617,7 +647,8 @@ if __name__ == "__main__":
                     
                     # Perform the translation using a web search
                     translation_query = f"translate {to_translate} in {target_language}"
-                    searchGoogle(translation_query)
+                    response = searchGoogle(translation_query)
+                    icecream.response_text(response)
 
 
                 

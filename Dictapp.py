@@ -30,7 +30,7 @@ def openappweb(query):
                 os.system(f"start {dictapp[app]}")
 
 def closeappweb(query):
-    speak("Closing,sir")
+    speak("Closing, sir")
     if "one tab" in query or "1 tab" in query:
         pyautogui.hotkey("ctrl","w")
         speak("All tabs closed")
