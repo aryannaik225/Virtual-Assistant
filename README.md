@@ -14,6 +14,8 @@ For the main functionality of the project, please refer to the [main.py](main.py
 - News updates: Jarvis can fetch the latest news headlines from the web and display them to the user.
 - Games: Jarvis can play simple games like Rock, Paper, Scissors with the user.
 
+- For in detail look of the features, please refer to the [commands.txt](commands.txt) file.
+
 ## Installation
 
 1. Clone the repository to your local machine:
