@@ -16,7 +16,7 @@ Jarvis is a Python-based AI assistant that can perform various tasks such as res
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/yourusername/jarvis-assistant.git
+git clone https://github.com/aryannaik225/Virtual-Assistant.git
 ```
 
 2. Install the required dependencies:
