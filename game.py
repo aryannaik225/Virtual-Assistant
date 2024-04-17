@@ -94,4 +94,10 @@ def game_play():
 
     response = f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}"
     icecream.response_text(response)
+    if Me_score > Com_score :
+        icecream.response_text("You Won!!")
+        speak("You Won!!")
+    else:
+        icecream.response_text("You Lost. Better Luck Next Time")
+        speak("You Lost. Better Luck Next Time")
     print(f"FINAL SCORE :- ME :- {Me_score} : COM :- {Com_score}")

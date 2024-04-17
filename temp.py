@@ -1,0 +1,5 @@
+remember = open("Remember.txt","r")
+response = remember.read()
+print(remember.read())
+remember.close()
+print(response)

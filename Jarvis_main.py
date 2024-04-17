@@ -502,13 +502,14 @@ if __name__ == "__main__":
                     rememberMessage = query.replace("jarvis","")
                     icecream.response_text(rememberMessage)
                     speak("You told me to remember that"+rememberMessage)
-                    remember = open("Remember.txt","a")
+                    remember = open("Remember.txt","w")
                     remember.write(rememberMessage)
                     remember.close()
                 elif "what do you remember" in query:
                     remember = open("Remember.txt","r")
-                    icecream.response_text(remember.read())
-                    speak("You told me to " + remember.read())
+                    response = remember.read()
+                    icecream.response_text(response)
+                    speak("You told me to " + response)
                     remember.close()
 
                 elif "news" in query:
