@@ -22,6 +22,5 @@ def greetMe():
         # speak("Good Evening Sir")
         response = "Good Evening Sir"
 
-    speak("Please tell me how can I help you today")
     return response + "\nPlease tell me how can I help you today"
     
