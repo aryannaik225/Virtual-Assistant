@@ -10,7 +10,7 @@ thank you
 open chrome
 close chrome
 check my internet speed
-play a game (optional)
+play a game
 i am tired
 pause the video
 enter full screen
