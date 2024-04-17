@@ -2,6 +2,9 @@
 
 Jarvis is a Python-based AI assistant that can perform various tasks such as responding to voice commands, fetching the latest news, playing games, setting alarms, providing weather updates, and much more.
 
+For the main functionality of the project, please refer to the [main.py](main.py) file.
+
+
 ## Features
 
 - Voice recognition and response: Jarvis can recognize voice commands using the SpeechRecognition library and respond to them using text-to-speech technology.
