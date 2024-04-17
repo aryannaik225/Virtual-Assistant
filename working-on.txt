@@ -42,9 +42,10 @@ finally sleep
 
 
 #commands that are buggy
+✅ play a game ==> didnt stop unless both reached 3 score
 temperature / weather ==> returns "people also ask" as thats what is at the top when you search for temperature on google
 set an alarm ==> takes input on terminal instead of gui
-remember that ==> the speech doesnt speak everything ... easy to fix
+✅ remember that ==> the speech doesnt speak everything ... easy to fix
 whatsapp ==> the datetime module has no attribute "now" which is used to send the message after two minutes of confirming
 schedule my day ==> when asked how many tasks ... it takes input of three instead of 3 so cant convert into integer
 ipl score ==> it doesnt work
