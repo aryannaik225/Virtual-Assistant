@@ -183,7 +183,9 @@ if __name__ == "__main__":
 
                 elif "what can you do" in query:
                     from whatcan import readme
-                    readme()
+                    response = readme()
+                    icecream.response_text(response)
+                    speak(response)
                 
                 elif "hello" in query:
                     response = "Hello sir"
@@ -226,9 +228,10 @@ if __name__ == "__main__":
                     speak("Welcome sir")      
 
                 elif "focus mode" in query:
-                    response = "Are you sure that you want to enter focus mode:- [1 for YES / 2 for NO]"
-                    a = int(input("Are you sure that you want to enter focus mode :- [1 for YES / 2 for NO] "))
-                    if (a==1):
+                    response = "Are you sure that you want to enter focus mode:- YES / NO"
+                    icecream.response_text(response)
+                    a = icecream.recognize_speech().lower()
+                    if "yes" in a:
                         response = "Entering the focus mode...."
                         icecream.response_text(response)
                         speak("Entering the focus mode....")
