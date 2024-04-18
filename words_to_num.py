@@ -31,8 +31,10 @@ def words_to_numbers(input_str):
             if word in word_to_num:
                 temp_result += word_to_num[word]
         result += temp_result
+        print(result)
         return result
     else:
+        print(input_str)
         return input_str
 
 # Example usage:
