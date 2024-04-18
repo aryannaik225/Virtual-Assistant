@@ -459,8 +459,8 @@ if __name__ == "__main__":
                     url = f"https://www.google.com/search?q={search}"
                     r  = requests.get(url)
                     data = BeautifulSoup(r.text,"html.parser")
-                    temp = data.find("div", class_ = "BNeawe").text
-                    response = f"current{search} is {temp}"
+                    temp = data.find("div", class_ = "vk_bk TylWce SGNhVe")
+                    response = f"current{search} is {temp} degree celcius"
                     icecream.response_text(response)
                     speak(f"current{search} is {temp}")
                 elif "weather" in query:
@@ -468,8 +468,8 @@ if __name__ == "__main__":
                     url = f"https://www.google.com/search?q={search}"
                     r  = requests.get(url)
                     data = BeautifulSoup(r.text,"html.parser")
-                    temp = data.find("div", class_ = "BNeawe").text
-                    response = f"current{search} is {temp}"
+                    temp = data.find("span", id = "wob_tm").text
+                    response = f"current{search} is {temp} degree celcius"
                     icecream.response_text(response)
                     speak(f"current{search} is {temp}")
 
