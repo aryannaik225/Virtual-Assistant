@@ -455,23 +455,23 @@ if __name__ == "__main__":
                     speak(response)
 
                 elif "temperature" in query:
-                    search = "temperature in mumbai"
-                    url = f"https://www.google.com/search?q={search}"
-                    r  = requests.get(url)
-                    data = BeautifulSoup(r.text,"html.parser")
-                    temp = data.find("div", class_ = "vk_bk TylWce SGNhVe")
-                    response = f"current{search} is {temp} degree celcius"
+                    search = "Weather in mumbai"
+                    url = f"https://www.google.com/search?&q={search}"
+                    r = requests.get(url)
+                    soup = BeautifulSoup(r.text, "html.parser")
+                    update = soup.find("div", class_="BNeawe").text
+                    response = f"current{search} is {update}"
                     icecream.response_text(response)
-                    speak(f"current{search} is {temp}")
+                    speak(f"current{search} is {update}")
                 elif "weather" in query:
-                    search = "weather in mumbai"
-                    url = f"https://www.google.com/search?q={search}"
-                    r  = requests.get(url)
-                    data = BeautifulSoup(r.text,"html.parser")
-                    temp = data.find("span", id = "wob_tm").text
-                    response = f"current{search} is {temp} degree celcius"
+                    search = "Weather in mumbai"
+                    url = f"https://www.google.com/search?&q={search}"
+                    r = requests.get(url)
+                    soup = BeautifulSoup(r.text, "html.parser")
+                    update = soup.find("div", class_="BNeawe").text
+                    response = f"current{search} is {update}"
                     icecream.response_text(response)
-                    speak(f"current{search} is {temp}")
+                    speak(f"current{search} is {update}")
 
                 elif "set an alarm" in query:
                     print("input time example:- 10 and 10 and 10")
