@@ -4,6 +4,7 @@ import os
 import random
 from time import sleep
 import webbrowser
+from winsound import PlaySound
 from bs4 import BeautifulSoup
 import pyautogui
 import pyttsx3
@@ -19,6 +20,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayou
 from PySide6 import QtCore 
 from PySide6.QtGui import QFont, QTextCursor
 import pyjokes
+from playsound import playsound
 
 # from INTRO import play_gif
 # play_gif
@@ -561,21 +563,40 @@ if __name__ == "__main__":
                     url = "https://www.cricbuzz.com/"
                     page = requests.get(url)
                     soup = BeautifulSoup(page.text, "html.parser")
+                    notification_sound = "notification.mp3"
 
                     try:
-                        team1 = soup.find_all(class_="cb-ovr-flo cb-hmscg-tm-nm")[0].get_text()
-                        team2 = soup.find_all(class_="cb-ovr-flo cb-hmscg-tm-nm")[1].get_text()
-                        team1_score = soup.find_all(class_="cb-ovr-flo")[8].get_text()
-                        team2_score = soup.find_all(class_="cb-ovr-flo")[10].get_text()
+                        team1 = None
+                        team2 = None
+                        team_elements = soup.find_all(class_="cb-col-50 cb-ovr-flo cb-hmscg-tm-name")
+                        if team_elements:    
+                            team1 = team_elements[0].get_text()
+                            team2 = team_elements[1].get_text()
+                            print("Gotcha1")
 
-                        print(f"{team1} : {team1_score}")
-                        print(f"{team2} : {team2_score}")
+                        team1_score = None
+                        team2_score = None
+                        if team1 and team2:
+                            team1_score = soup.find_all(class_="cb-ovr-flo")[8].get_text()
+                            team2_score = soup.find_all(class_="cb-ovr-flo")[10].get_text()
+                            print("Gotcha2")
 
-                        notification.notify(
-                            title="IPL SCORE",
-                            message=f"{team1} : {team1_score}\n {team2} : {team2_score}",
-                            timeout=15
-                        )
+                        if team1_score is not None and team2_score is not None:
+                            print(f"{team1} : {team1_score}")
+                            print(f"{team2} : {team2_score}")
+                            print("Gotcha3")
+                            notification.notify(
+                                title="IPL SCORE",
+                                message=f"{team1} : {team1_score}\n {team2} : {team2_score}",
+                                timeout=15
+                            )
+                        else:
+                            print("Error: Unable to retrieve IPL scores at the moment. Please try again later.")
+                            notification.notify(
+                                title="IPL SCORE",
+                                message="Unable to retrieve scores at the moment. Please try again later.",
+                                timeout=15
+                            )
                     except IndexError:
                         print("Error: Unable to retrieve IPL scores at the moment. Please try again later.")
                         notification.notify(
