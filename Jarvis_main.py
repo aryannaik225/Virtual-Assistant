@@ -474,11 +474,31 @@ if __name__ == "__main__":
                     speak(f"current{search} is {update}")
 
                 elif "set an alarm" in query:
+                    from words_to_num import words_to_numbers
                     print("input time example:- 10 and 10 and 10")
                     response = "Set the time"
                     icecream.response_text(response)
                     speak("Set the time")
-                    a = input("Please tell the time :- ")
+
+                    response = "State the Hour"
+                    icecream.response_text(response)
+                    speak(response)
+                    lala = icecream.recognize_speech()
+                    H = words_to_numbers(lala)
+
+                    response = "State the Minute"
+                    icecream.response_text(response)
+                    speak(response)
+                    lala = icecream.recognize_speech()
+                    M = words_to_numbers(lala)
+
+                    response = "State the Seconds"
+                    icecream.response_text(response)
+                    speak(response)
+                    lala = icecream.recognize_speech()
+                    S = words_to_numbers(lala)
+
+                    a = f"{H} and {M} and {S}"
                     alarm(a)
                     response = "Alarm set"
                     icecream.response_text(response)
