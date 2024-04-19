@@ -8,12 +8,15 @@ from time import sleep
 import os 
 from datetime import timedelta
 from datetime import datetime
+from datetime import *
 from Jarvis_main import *
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
 rate = engine.setProperty("rate",170)
+
+icecream = MainWindow()
 
 # def speak(audio):
 #     engine.say(audio)
@@ -35,28 +38,32 @@ rate = engine.setProperty("rate",170)
 #         return "None"
 #     return query
 
-strTime = int(datetime.now().strftime("%H"))
-update = int((datetime.now()+timedelta(minutes = 2)).strftime("%M"))
+strTime = int(datetime.datetime.now().strftime("%H"))
+update = int((datetime.datetime.now()+timedelta(minutes = 2)).strftime("%M"))
 
 def sendMessage():
     icecream.response_text("Who do you want to message?")
     speak("Who do you want to message")
     icecream.response_text("Aadit \nAryan")
     speak("Aadit or Aryan")
-    icecream.response_text("Say 1 or 2")
+    icecream.response_text("Say first or second")
     speak("Say 1 or 2")
-    a = icecream.recognize_speech().lower()
-    if a == "one" or a == "1":
+    a = None
+    while a == None:
+        a = icecream.recognize_speech().lower()
+    if a == "one" or a == "1" or "first" in a:
         icecream.response_text("Whats the message?")
         speak("Whats the message")
         message = icecream.recognize_speech()
         pywhatkit.sendwhatmsg("+919984624288",message,time_hour=strTime,time_min=update)
         icecream.response_text("Message will be sent in 2 mins")
         speak("Message will be sent in 2 mins")
-    elif a== "two" or a == "2":
+        pyautogui.press("enter")
+    elif a== "two" or a == "2" or "second" in a:
         icecream.response_text("Whats the message?")
         speak("Whats the message")
         message = icecream.recognize_speech()
         pywhatkit.sendwhatmsg("+918779067940",message,time_hour=strTime,time_min=update)
         icecream.response_text("Message will be sent in 2 mins")
         speak("Message will be sent in 2 mins")
+        pyautogui.press("enter")

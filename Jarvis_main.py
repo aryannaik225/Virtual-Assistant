@@ -618,7 +618,7 @@ if __name__ == "__main__":
                     pyautogui.press("super")
                     pyautogui.typewrite("camera")
                     pyautogui.press("enter")
-                    pyautogui.sleep(2)
+                    pyautogui.sleep(10)
                     response = "SMILE"
                     icecream.response_text(response)
                     speak("SMILE")
@@ -626,20 +626,23 @@ if __name__ == "__main__":
 
                 elif "translate" in query:
                     # from SearchNow import searchGoogle
-                    # # from Translator import translategl
-                    # # query = query.replace("jarvis","")
-                    # # query = query.replace("translate","")
-                    # # translategl(query)
+                    # from Translator import translategl
+                    # query = query.replace("jarvis","")
+                    # query = query.replace("translate","")
+                    # translategl(query)
                     # searchGoogle(query)
                     # Extract the term to translate and the target language
-                    from SearchNow import searchGoogle
-                    to_translate = query.split("translate")[1].strip()  # Get the text to translate
-                    target_language = query.split("in")[1].strip()  # Get the target language
+                    # from SearchNow import searchGoogle
+                    # to_translate = query.split("translate")[1].strip()  # Get the text to translate
+                    # target_language = query.split("in")[1].strip()  # Get the target language
                     
-                    # Perform the translation using a web search
-                    translation_query = f"translate {to_translate} in {target_language}"
-                    response = searchGoogle(translation_query)
-                    icecream.response_text(response)
+                    # # Perform the translation using a web search
+                    # translation_query = f"translate {to_translate} in {target_language}"
+                    # response = searchGoogle(translation_query)
+                    # icecream.response_text(response)
+                    print("haha")
+
+
 
 
                 
