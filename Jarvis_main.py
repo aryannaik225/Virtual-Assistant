@@ -22,6 +22,8 @@ from PySide6.QtGui import QFont, QTextCursor
 import pyjokes
 from playsound import playsound
 
+from Translation import Translationss
+
 # from INTRO import play_gif
 # play_gif
 
@@ -625,6 +627,7 @@ if __name__ == "__main__":
                     pyautogui.press("enter")
 
                 elif "translate" in query:
+                    from Translation import *
                     # from SearchNow import searchGoogle
                     # from Translator import translategl
                     # query = query.replace("jarvis","")
@@ -633,14 +636,14 @@ if __name__ == "__main__":
                     # searchGoogle(query)
                     # Extract the term to translate and the target language
                     # from SearchNow import searchGoogle
-                    # to_translate = query.split("translate")[1].strip()  # Get the text to translate
-                    # target_language = query.split("in")[1].strip()  # Get the target language
-                    
+                    to_translate = query.split("translate")[1].strip()  # Get the text to translate
+                    target_language = query.split("in")[1].strip()  # Get the target language
+                    Translationss(to_translate, target_language)
                     # # Perform the translation using a web search
                     # translation_query = f"translate {to_translate} in {target_language}"
                     # response = searchGoogle(translation_query)
                     # icecream.response_text(response)
-                    print("haha")
+                    
 
 
 
