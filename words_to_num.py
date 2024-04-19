@@ -23,19 +23,35 @@ word_to_num = {
 }
 
 def words_to_numbers(input_str):
-    if str(input_str).replace("-", "").isalpha():
-        words = input_str.lower().split()
-        result = 0
-        temp_result = 0
-        for word in words:
-            if word in word_to_num:
-                temp_result += word_to_num[word]
-        result += temp_result
-        print(result)
-        return result
+    found = False
+    for key, value in word_to_num.items():
+        if key in input_str:
+            found = True
+            result = key
+            break
+        
+        elif str(value) in input_str:
+            found = True
+            result = value
+            break
     else:
-        print(input_str)
-        return input_str
+        return 0
+    
+    if found:
+        if str(result).replace("-", "").isalpha():
+            words = result.lower().split()
+            result1 = 0
+            temp_result = 0
+            for word in words:
+                if word in word_to_num:
+                    temp_result += word_to_num[word]
+            result1 += temp_result
+            print(result1)
+            return result1
+        else:
+            print(result)
+            return result
+
 
 # Example usage:
 # input_number = "ninety-eight"

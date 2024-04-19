@@ -1,35 +1,53 @@
-from plyer import notification
-import requests
-from bs4 import BeautifulSoup
+word_to_num = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
+    "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
+    "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
+    "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+    "twenty": 20, "twenty-one": 21, "twenty-two": 22, "twenty-three": 23, "twenty-four": 24,
+    "twenty-five": 25, "twenty-six": 26, "twenty-seven": 27, "twenty-eight": 28, "twenty-nine": 29,
+    "thirty": 30, "thirty-one": 31, "thirty-two": 32, "thirty-three": 33, "thirty-four": 34,
+    "thirty-five": 35, "thirty-six": 36, "thirty-seven": 37, "thirty-eight": 38, "thirty-nine": 39,
+    "forty": 40, "forty-one": 41, "forty-two": 42, "forty-three": 43, "forty-four": 44,
+    "forty-five": 45, "forty-six": 46, "forty-seven": 47, "forty-eight": 48, "forty-nine": 49,
+    "fifty": 50, "fifty-one": 51, "fifty-two": 52, "fifty-three": 53, "fifty-four": 54,
+    "fifty-five": 55, "fifty-six": 56, "fifty-seven": 57, "fifty-eight": 58, "fifty-nine": 59,
+    "sixty": 60, "sixty-one": 61, "sixty-two": 62, "sixty-three": 63, "sixty-four": 64,
+    "sixty-five": 65, "sixty-six": 66, "sixty-seven": 67, "sixty-eight": 68, "sixty-nine": 69,
+    "seventy": 70, "seventy-one": 71, "seventy-two": 72, "seventy-three": 73, "seventy-four": 74,
+    "seventy-five": 75, "seventy-six": 76, "seventy-seven": 77, "seventy-eight": 78, "seventy-nine": 79,
+    "eighty": 80, "eighty-one": 81, "eighty-two": 82, "eighty-three": 83, "eighty-four": 84,
+    "eighty-five": 85, "eighty-six": 86, "eighty-seven": 87, "eighty-eight": 88, "eighty-nine": 89,
+    "ninety": 90, "ninety-one": 91, "ninety-two": 92, "ninety-three": 93, "ninety-four": 94,
+    "ninety-five": 95, "ninety-six": 96, "ninety-seven": 97, "ninety-eight": 98, "ninety-nine": 99,
+    "one hundred": 100
+}
 
-url = "https://www.cricbuzz.com/"
-page = requests.get(url)
-soup = BeautifulSoup(page.text, "html.parser")
-
-team1 = None
-team2 = None
-team_elements = soup.find_all(class_="cb-col-50 cb-ovr-flo cb-hmscg-tm-name")
-if team_elements:    
-    team1 = team_elements[0].get_text()
-    team2 = team_elements[1].get_text()
-    print("Gotcha1")
-
-team1_score = None
-team2_score = None
-if team1 and team2:
-    team1_score = soup.find_all(class_="cb-ovr-flo")[8].get_text()
-    team2_score = soup.find_all(class_="cb-ovr-flo")[10].get_text()
-    print("Gotcha2")
-
-if team1_score is not None and team2_score is not None:
-    print(f"{team1} : {team1_score}")
-    print(f"{team2} : {team2_score}")
-    print("Gotcha3")
-
-    notification.notify(
-        title="IPL SCORE",
-        message=f"{team1} : {team1_score}\n {team2} : {team2_score}",
-        timeout=15
-    )
-else:
-    print("Failed to retrieve team scores")
+def words_to_numbers(input_str):
+    found = False
+    for key, value in word_to_num.items():
+        if key in input_str:
+            found = True
+            result = key
+            break
+        
+        if str(value) in input_str:
+            found = True
+            result = value
+            break
+    else:
+        return 0
+    
+    if found:
+        if str(result).replace("-", "").isalpha():
+            words = result.lower().split()
+            result1 = 0
+            temp_result = 0
+            for word in words:
+                if word in word_to_num:
+                    temp_result += word_to_num[word]
+            result1 += temp_result
+            print(result1)
+            return result1
+        else:
+            print(result)
+            return result

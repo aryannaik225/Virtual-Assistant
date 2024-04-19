@@ -509,6 +509,7 @@ if __name__ == "__main__":
                         break
 
                 elif "schedule my day" in query:
+                    from words_to_num import words_to_numbers
                     tasks = [] #Empty list 
                     response == "Do you want to clear old tasks?"
                     icecream.response_text(response)
@@ -518,9 +519,10 @@ if __name__ == "__main__":
                         file = open("tasks.txt","w")
                         file.write(f"")
                         file.close()
-                        icecream.response_text("How manys tasks do you wish to enter?")
-                        speak("How manys tasks do you wish to enter?")
-                        no_tasks = int(icecream.recognize_speech())
+                        while no_tasks == 0:
+                            icecream.response_text("How manys tasks do you wish to enter?")
+                            speak("How manys tasks do you wish to enter?")
+                            no_tasks = int(words_to_numbers(icecream.recognize_speech()))
                         i = 0
                         for i in range(no_tasks):
                             icecream.response_text(f"What is the task {i}?")
@@ -530,9 +532,10 @@ if __name__ == "__main__":
                             file.write(f"{i}. {tasks[i]}\n")
                             file.close()
                     elif "no" in query:
-                        icecream.response_text("How manys tasks do you wish to enter?")
-                        speak("How manys tasks do you wish to enter?")
-                        no_tasks = int(icecream.recognize_speech())
+                        while no_tasks == 0:
+                            icecream.response_text("How manys tasks do you wish to enter?")
+                            speak("How manys tasks do you wish to enter?")
+                            no_tasks = int(words_to_numbers(icecream.recognize_speech()))
                         i = 0
                         for i in range(no_tasks):
                             icecream.response_text(f"What is the task {i}?")
