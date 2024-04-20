@@ -160,6 +160,32 @@ if __name__ == "__main__":
             response = greetMe()
             icecream.response_text(response)
             speak(response)
+        elif "khul ja sim sim" in query:
+            from GreetMe import greetMe
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
+        elif "khulja sim sim" in query:
+            from GreetMe import greetMe
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
+        elif "khulja" in query:
+            from GreetMe import greetMe
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
+        elif "open sim sim" in query:
+            from GreetMe import greetMe
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
+        elif "open sesame" in query:
+            from GreetMe import greetMe
+            response = greetMe()
+            icecream.response_text(response)
+            speak(response)
+
 
             while True:
                 query = icecream.recognize_speech().lower()
@@ -174,9 +200,26 @@ if __name__ == "__main__":
                     speak(response)
                     break
 
+                elif "finally sleep" in query:
+                    response = "Going to sleep"
+                    icecream.response_text(response)
+                    speak("Going to sleep,sir")
+                    # sys.exit(app.exec())
+                    exit()
+                elif "band hoja" in query:
+                    response = "jo hukkhum"
+                    icecream.response_text(response)
+                    speak("jo hukummmmm")
+                    exit()
+                elif "close sim sim" in query:
+                    response = "your wish sir"
+                    icecream.response_text(response)
+                    speak(response)
+                    exit()
+
 
                 elif "who are you" in query:
-                    response = "I am your personal Assistant Jarvis"
+                    response = "I am your personal Assistant Sim Sim"
                     icecream.response_text(response)
                     speak(response)
                 
@@ -253,6 +296,7 @@ if __name__ == "__main__":
                 elif "open" in query:   #EASY METHOD
                     query = query.replace("open","")
                     query = query.replace("jarvis","")
+                    query = query.replace("sim", "")
                     pyautogui.press("super")
                     pyautogui.typewrite(query)
                     pyautogui.sleep(3)
@@ -261,6 +305,7 @@ if __name__ == "__main__":
                 elif "close" in query:
                     query = query.replace("close", "")
                     query = query.replace("jarvis", "")
+                    query = query.replace("sim", "")
                     query = query.replace(" ", "")
                     os.system(f"taskkill /f /im {query}.exe")     
 
@@ -458,16 +503,10 @@ if __name__ == "__main__":
                     icecream.response_text(response)  
                     speak(f"Sir, the time is {strTime}")
 
-                elif "finally sleep" in query:
-                    response = "Going to sleep"
-                    icecream.response_text(response)
-                    speak("Going to sleep,sir")
-                    # sys.exit(app.exec())
-                    exit()
-
                 elif "remember that" in query:
                     rememberMessage = query.replace("remember that","")
                     rememberMessage = query.replace("jarvis","")
+                    rememberMessage = query.replace("sim", "")
                     icecream.response_text(rememberMessage)
                     speak("You told me to remember that"+rememberMessage)
                     remember = open("Remember.txt","w")
@@ -489,6 +528,7 @@ if __name__ == "__main__":
                     from Calculatenumbers import Calc
                     query = query.replace("calculate","")
                     query = query.replace("jarvis","")
+                    query = query.replace("sim", "")
                     response = str(Calc(query))
                     icecream.response_text(response)
 
@@ -504,10 +544,10 @@ if __name__ == "__main__":
                     icecream.response_text(response)
                     speak("Do you wish to shutdown your computer?")
                     shutdown = icecream.recognize_speech()
-                    if shutdown == "yes":
+                    if "yes" in shutdown:
                         os.system("shutdown /s /t 1")
 
-                    elif shutdown == "no":
+                    elif "no" in shutdown:
                         break
 
                 elif "schedule my day" in query:
@@ -652,7 +692,9 @@ if __name__ == "__main__":
                     # Find the position of "in" in the query
                     # Find the position of "in" in the query
                     in_index = query.find("in")
-
+                    query = query.replace("jarvis", "")
+                    query = query.replace("sim", "")
+                    query = query.replace("please", "")
                     # Get the target language
                     if in_index != -1:  # Check if "in" is found in the query
                         to_translate = query.split("translate")[1].strip()  # Get the text to translate
