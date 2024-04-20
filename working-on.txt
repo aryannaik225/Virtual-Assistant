@@ -49,4 +49,4 @@ finally sleep
 whatsapp ==> the datetime module has no attribute "now" which is used to send the message after two minutes of confirming
 ✅ schedule my day ==> when asked how many tasks ... it takes input of three instead of 3 so cant convert into integer
 ✅ ipl score ==> it doesnt work
-translate ==> the api isnt working so ask google to translate but it returns a whole para too about the word along with the translation
+✅ translate ==> the api isnt working so ask google to translate but it returns a whole para too about the word along with the translation
