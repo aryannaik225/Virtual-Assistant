@@ -628,22 +628,49 @@ if __name__ == "__main__":
 
                 elif "translate" in query:
                     from Translation import *
-                    # from SearchNow import searchGoogle
-                    # from Translator import translategl
-                    # query = query.replace("jarvis","")
-                    # query = query.replace("translate","")
-                    # translategl(query)
-                    # searchGoogle(query)
-                    # Extract the term to translate and the target language
-                    # from SearchNow import searchGoogle
-                    to_translate = query.split("translate")[1].strip()  # Get the text to translate
-                    target_language = query.split("in")[1].strip()  # Get the target language
-                    Translationss(to_translate, target_language)
-                    # # Perform the translation using a web search
-                    # translation_query = f"translate {to_translate} in {target_language}"
-                    # response = searchGoogle(translation_query)
-                    # icecream.response_text(response)
+                    # # from SearchNow import searchGoogle
+                    # # from Translator import translategl
+                    # # query = query.replace("jarvis","")
+                    # # query = query.replace("translate","")
+                    # # translategl(query)
+                    # # searchGoogle(query)
+                    # # Extract the term to translate and the target language
+                    # # from SearchNow import searchGoogle
+                    # to_translate = query.split("translate")[1].strip()  # Get the text to translate
+                    # target_language = query.split("in")[1].strip().lower()  # Get the target language and convert to lowercase
+                    # print(f"Target language extracted: {target_language}")
+                    # result = Translationss(to_translate, target_language)
+                    # print(result)
+                    # icecream.response_text(f"{to_translate} in {target_language} is {result}")
+                    # speak(f"{to_translate} in {target_language} is {result}")
+                    # # # Perform the translation using a web search
+                    # # translation_query = f"translate {to_translate} in {target_language}"
+                    # # response = searchGoogle(translation_query)
+                    # # icecream.response_text(response)
                     
+                    # Find the position of "in" in the query
+                    # Find the position of "in" in the query
+                    # Find the position of "in" in the query
+                    in_index = query.find("in")
+
+                    # Get the target language
+                    if in_index != -1:  # Check if "in" is found in the query
+                        to_translate = query.split("translate")[1].strip()  # Get the text to translate
+                        target_language = query[in_index + 2:].strip().lower()  # Extract the target language
+                        print(f"Target language extracted: {target_language}")
+                        if target_language in language_codes:  # Check if the target language is in the language_codes dictionary
+                            result = Translationss(to_translate, target_language)
+                            print(result)
+                            icecream.response_text(f"{to_translate} in {target_language} is {result}")
+                            speak(f"{to_translate} in {target_language} is {result}")
+                        else:
+                            print("Target language not found in dictionary")
+                            icecream.response_text("Not Found or Wrong Language Inserted")
+                            speak("Not Found or Wrong Language Inserted")
+                    else:
+                        print("'in' not found in the query")
+                        icecream.response_text("Please specify the target language using 'in'")
+                        speak("Please specify the target language using 'in'")
 
 
 
