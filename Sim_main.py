@@ -148,43 +148,51 @@ class MainWindow(QMainWindow):
             self.spoken_text_edit.setTextCursor(cursor)
 
 if __name__ == "__main__":
-    while True:
+    var1 = True
+    var2 = False
+    while var1:
         app = QApplication.instance()
         if app is None:
             app = QApplication(sys.argv)
         icecream = MainWindow()
         icecream.show()
         query = icecream.recognize_speech().lower()
-        if "wake up" in query:
+        if "wake up" in query or "khul ja sim sim" in query or "khulja sim sim" in query or "khulja" in query or "open sim sim" in query or "open sesame" in query or "khulja samsung" in query or "khul ja samsung" in query:
             from GreetMe import greetMe
             response = greetMe()
             icecream.response_text(response)
             speak(response)
-        elif "khul ja sim sim" in query:
-            from GreetMe import greetMe
-            response = greetMe()
-            icecream.response_text(response)
-            speak(response)
-        elif "khulja sim sim" in query:
-            from GreetMe import greetMe
-            response = greetMe()
-            icecream.response_text(response)
-            speak(response)
-        elif "khulja" in query:
-            from GreetMe import greetMe
-            response = greetMe()
-            icecream.response_text(response)
-            speak(response)
-        elif "open sim sim" in query:
-            from GreetMe import greetMe
-            response = greetMe()
-            icecream.response_text(response)
-            speak(response)
-        elif "open sesame" in query:
-            from GreetMe import greetMe
-            response = greetMe()
-            icecream.response_text(response)
-            speak(response)
+        #     var2 = True
+        # elif "khul ja sim sim" in query:
+        #     from GreetMe import greetMe
+        #     response = greetMe()
+        #     icecream.response_text(response)
+        #     speak(response)
+        #     var2 = True
+        # elif "khulja sim sim" in query:
+        #     from GreetMe import greetMe
+        #     response = greetMe()
+        #     icecream.response_text(response)
+        #     speak(response)
+        #     var2 = True
+        # elif "khulja" in query:
+        #     from GreetMe import greetMe
+        #     response = greetMe()
+        #     icecream.response_text(response)
+        #     speak(response)
+        #     var2 = True
+        # elif "open sim sim" in query:
+        #     from GreetMe import greetMe
+        #     response = greetMe()
+        #     icecream.response_text(response)
+        #     speak(response)
+        #     var2 = True
+        # elif "open sesame" in query:
+        #     from GreetMe import greetMe
+        #     response = greetMe()
+        #     icecream.response_text(response)
+        #     speak(response)
+        #     var2 = True
 
 
             while True:
@@ -193,16 +201,19 @@ if __name__ == "__main__":
                     response = "Ok sir, you can call me anytime"
                     icecream.response_text(response)
                     speak("Ok sir, you can call me anytime")
+                    var2 = False
                     break
-                elif "soja sim" in query:
+                elif "so ja sim" in query:
                     response = "Sleeping for now"
                     icecream.response_text(response)
                     speak(response)
+                    var2 = False
                     break
                 elif "stop" in query:
                     response = "Ok, I'll stop now"
                     icecream.response_text(response)
                     speak(response)
+                    var2 = False
                     break
 
                 elif "finally sleep" in query:
@@ -211,7 +222,7 @@ if __name__ == "__main__":
                     speak("Going to sleep,sir")
                     # sys.exit(app.exec())
                     exit()
-                elif "band hoja" in query:
+                elif "band ho ja" in query:
                     response = "jo hukkhum"
                     icecream.response_text(response)
                     speak("jo hukummmmm")
