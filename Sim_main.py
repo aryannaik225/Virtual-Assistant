@@ -194,6 +194,11 @@ if __name__ == "__main__":
                     icecream.response_text(response)
                     speak("Ok sir, you can call me anytime")
                     break
+                elif "soja sim" in query:
+                    response = "Sleeping for now"
+                    icecream.response_text(response)
+                    speak(response)
+                    break
                 elif "stop" in query:
                     response = "Ok, I'll stop now"
                     icecream.response_text(response)
