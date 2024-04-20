@@ -24,6 +24,7 @@ def WolfRamAlpha(query):
 
 def Calc(query):
     Term = str(query)
+    Term = Term.replace("sim","")
     Term = Term.replace("jarvis","")
     Term = Term.replace("multiply","*")
     Term = Term.replace("into","*")

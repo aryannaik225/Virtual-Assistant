@@ -25,8 +25,9 @@ language_codes = {'afrikaans': 'af', 'albanian': 'sq', 'amharic': 'am', 'arabic'
  'zulu': 'zu'}
 # icecream = MainWindow()
 
-def Translationss(to_tranlate, target_language):
+def Translationss(to_translate, target_language):
     try:
+        to_tranlate = to_translate.split("in")[0].strip()
         # Check if the target language exists in the language_codes dictionary
         if target_language.lower() in language_codes:
             language_code = language_codes[target_language.lower()]
