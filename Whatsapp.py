@@ -47,7 +47,7 @@ def sendMessage():
     icecream.response_text("Aadit \nAryan")
     speak("Aadit or Aryan")
     icecream.response_text("Say first or second")
-    speak("Say 1 or 2")
+    speak("Say first or second")
     a = None
     while a == None:
         a = icecream.recognize_speech().lower()

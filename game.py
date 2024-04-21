@@ -41,6 +41,7 @@ def game_play():
         choose = ("rock","paper","scissors") #Tuple
         com_choose = random.choice(choose)
         query = icecream.recognize_speech().lower()
+        query = query.replace("stone", "rock")
         if (query == "rock"):
             if (com_choose == "rock"):
                 icecream.response_text("ROCK")

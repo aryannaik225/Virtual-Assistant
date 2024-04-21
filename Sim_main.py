@@ -442,14 +442,20 @@ if __name__ == "__main__":
                     
                     elif "google" in query:
                         from SearchNow import searchGoogle
+                        query = query.replace("search", "")
+                        query = query.replace("on", "")
                         response = searchGoogle(query)
                         icecream.response_text(response)
                         speak(response)
                     elif "youtube" in query:
                         from SearchNow import searchYoutube
+                        query = query.replace("search", "")
+                        query = query.replace("on", "")
                         searchYoutube(query)
                     elif "wikipedia" in query:
                         from SearchNow import searchWikipedia
+                        query = query.replace("search", "")
+                        query = query.replace("on", "")
                         response = searchWikipedia(query)
                         icecream.response_text(response)
                         speak(response)
@@ -460,7 +466,7 @@ if __name__ == "__main__":
                         r = requests.get(url)
                         soup = BeautifulSoup(r.text, "html.parser")
                         update = soup.find("div", class_="BNeawe").text
-                        response = f"current{search} is {update}"
+                        response = f"current {search} is {update}"
                         icecream.response_text(response)
                         speak(f"current{search} is {update}")
                     elif "weather" in query:
@@ -469,7 +475,7 @@ if __name__ == "__main__":
                         r = requests.get(url)
                         soup = BeautifulSoup(r.text, "html.parser")
                         update = soup.find("div", class_="BNeawe").text
-                        response = f"current{search} is {update}"
+                        response = f"current {search} is {update}"
                         icecream.response_text(response)
                         speak(f"current{search} is {update}")
 
