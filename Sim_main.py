@@ -647,25 +647,37 @@ if __name__ == "__main__":
                                 print(f"{team1} : {team1_score}")
                                 print(f"{team2} : {team2_score}")
                                 print("Gotcha3")
-                                notification.notify(
-                                    title="IPL SCORE",
-                                    message=f"{team1} : {team1_score}\n {team2} : {team2_score}",
-                                    timeout=15
-                                )
+                                # notification.notify(
+                                #     title="IPL SCORE",
+                                #     message=f"{team1} : {team1_score}\n {team2} : {team2_score}",
+                                #     timeout=15
+                                # )
+                                response = f"{team1} : {team1_score}"
+                                icecream.response_text(response)
+                                response = f"{team2} : {team2_score}"
+                                icecream.response_text(response)
+                                speak(f"{team1} scored {team1_score} overs, {team2} scored {team2_score} overs")
+
                             else:
                                 print("Error: Unable to retrieve IPL scores at the moment. Please try again later.")
-                                notification.notify(
-                                    title="IPL SCORE",
-                                    message="Unable to retrieve scores at the moment. Please try again later.",
-                                    timeout=15
-                                )
+                                # notification.notify(
+                                #     title="IPL SCORE",
+                                #     message="Unable to retrieve scores at the moment. Please try again later.",
+                                #     timeout=15
+                                # )
+                                response = "Unable to retrieve scores at the moment. Please try again later."
+                                icecream.response_text(response)
+                                speak("Unable to retrieve score at the moment.")
                         except IndexError:
                             print("Error: Unable to retrieve IPL scores at the moment. Please try again later.")
-                            notification.notify(
-                                title="IPL SCORE",
-                                message="Unable to retrieve scores at the moment. Please try again later.",
-                                timeout=15
-                            )
+                            # notification.notify(
+                            #     title="IPL SCORE",
+                            #     message="Unable to retrieve scores at the moment. Please try again later.",
+                            #     timeout=15
+                            # )
+                            response = "Unable to retrieve scores at the moment. Please try again later."
+                            icecream.response_text(response)
+                            speak("Unable to retrieve score at the moment.")
 
                     elif "screenshot" in query:
                         im = pyautogui.screenshot()
