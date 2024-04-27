@@ -451,7 +451,9 @@ if __name__ == "__main__":
                         from SearchNow import searchYoutube
                         query = query.replace("search", "")
                         query = query.replace("on", "")
-                        searchYoutube(query)
+                        response = searchYoutube(query)
+                        icecream.response_text(response)
+                        speak(response)
                     elif "wikipedia" in query:
                         from SearchNow import searchWikipedia
                         query = query.replace("search", "")
