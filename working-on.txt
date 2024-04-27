@@ -1,5 +1,5 @@
-wake up Jarvis
-hello Jarvis
+khul ja sim sim
+hello
 who are you
 who created you
 what can you do
@@ -36,9 +36,9 @@ take a screenshot
 click my photo
 translate ball to hindi on google
 enter focus mode (locks youtube and all for 30 mins so i wouldnt try)
-go to sleep
-wake up
-finally sleep
+so ja sim sim
+khul ja sim sim
+band ho ja sim sim
 
 
 #commands that are buggy
