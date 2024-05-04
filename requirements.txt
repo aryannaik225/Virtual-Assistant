@@ -22,7 +22,6 @@ ctypes
 pillow
 pynput
 wikipedia
-playsound
 keyboard
 json
 pynput

@@ -20,7 +20,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayou
 from PySide6 import QtCore 
 from PySide6.QtGui import QFont, QTextCursor
 import pyjokes
-from playsound import playsound
+# from playsound import playsound
 
 from Translation import Translationss
 
