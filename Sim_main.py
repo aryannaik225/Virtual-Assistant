@@ -37,6 +37,7 @@ def speak(audio):
     engine.runAndWait()
 
 def takeCommand():
+    
     r = speech_recognition.Recognizer()
     with speech_recognition.Microphone() as source:
         print("Listening...")
